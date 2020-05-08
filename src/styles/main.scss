@@ -1,5 +1,9 @@
 @import 'reset';
 @import 'colors';
+@import 'dimensions';
+
+html { box-sizing: border-box; }
+*, *:before, *:after { box-sizing: inherit; }
 
 body {
   background: $colorBackgroundBody;
@@ -7,7 +11,8 @@ body {
 
 main {
   width: 100%;
-  max-width: 1200px;
+  max-width: $viewport-lg;
+  padding: 0 $gutter;
   margin: 0 auto;
   background: $colorBackgroundContent;
 }
