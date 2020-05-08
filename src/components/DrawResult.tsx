@@ -16,7 +16,7 @@ const DrawResult = ({ additionalNumbers, numbers }: DrawResultProps) => {
         ))}
 
         {additionalNumbers.map((number: string) => (
-          <li><DrawResultItem number={number} /></li>
+          <li><DrawResultItem number={number} additionalNumber /></li>
         ))}
       </ul>
     </article>
