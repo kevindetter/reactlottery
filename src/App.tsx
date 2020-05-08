@@ -1,20 +1,27 @@
 import React from 'react';
 
+import { GraphQLClient, ClientContext } from 'graphql-hooks';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 import NotFound from './pages/NotFound';
 import Results from './pages/Results';
 import Welcome from './pages/Welcome';
 
+const client = new GraphQLClient({
+  url: 'http://www.lottohelden.de/graphql'
+});
+
 function App() {
   return (
-    <Router>
-      <Switch>
-        <Route path="/" exact component={Welcome} />
-        <Route path="/results" component={Results} />
-        <Route component={NotFound} />
-      </Switch>
-    </Router>
+    <ClientContext.Provider value={client}>
+      <Router>
+        <Switch>
+          <Route path="/" exact component={Welcome} />
+          <Route path="/results" component={Results} />
+          <Route component={NotFound} />
+        </Switch>
+      </Router>
+    </ClientContext.Provider>
   );
 }
 
