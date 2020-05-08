@@ -3,6 +3,8 @@ import React from 'react';
 import { GraphQLClient, ClientContext } from 'graphql-hooks';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
+import PageWrap from 'components/PageWrap';
+
 import NotFound from 'pages/NotFound';
 import Results from 'pages/Results';
 import Welcome from 'pages/Welcome';
@@ -15,11 +17,13 @@ function App() {
   return (
     <ClientContext.Provider value={client}>
       <Router>
-        <Switch>
-          <Route path="/" exact component={Welcome} />
-          <Route path="/results" component={Results} />
-          <Route component={NotFound} />
-        </Switch>
+        <PageWrap>
+          <Switch>
+            <Route path="/" exact component={Welcome} />
+            <Route path="/results" component={Results} />
+            <Route component={NotFound} />
+          </Switch>
+        </PageWrap>
       </Router>
     </ClientContext.Provider>
   );
