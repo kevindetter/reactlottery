@@ -1,5 +1,7 @@
 import React from 'react';
 
+import DrawResultItem from 'components/DrawResultItem';
+
 type DrawResultProps = {
   additionalNumbers: string[],
   numbers: string[]
@@ -10,11 +12,11 @@ const DrawResult = ({ additionalNumbers, numbers }: DrawResultProps) => {
     <article>
       <ul>
         {numbers.map((number: string) => (
-          <li>{number}</li>
+          <li><DrawResultItem number={number} /></li>
         ))}
-        
-        {additionalNumbers.map((additionalNumber: string) => (
-          <li>{additionalNumber}</li>
+
+        {additionalNumbers.map((number: string) => (
+          <li><DrawResultItem number={number} /></li>
         ))}
       </ul>
     </article>
