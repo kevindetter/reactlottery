@@ -3,9 +3,9 @@ import React from 'react';
 import { GraphQLClient, ClientContext } from 'graphql-hooks';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
-import NotFound from './pages/NotFound';
-import Results from './pages/Results';
-import Welcome from './pages/Welcome';
+import NotFound from 'pages/NotFound';
+import Results from 'pages/Results';
+import Welcome from 'pages/Welcome';
 
 const client = new GraphQLClient({
   url: 'https://www.lottohelden.de/graphql'

@@ -2,6 +2,8 @@ import React from 'react';
 
 import { useQuery } from 'graphql-hooks';
 
+import DrawResult from 'components/DrawResult';
+
 const EUROJACKPOT_QUERY = `query Eurojackpot($limit: Int) {
   draw(limit: $limit, type: "eurojackpot") {
     draws {
@@ -18,9 +20,9 @@ const Results = () => {
     }
   });
 
-  interface Draw {
-    date: string;
-    numbers: string[];
+  type Draw = {
+    date: string,
+    numbers: string[]
   }
 
   if (loading) {
@@ -37,7 +39,9 @@ const Results = () => {
 
       <ul>
         {data.draw.draws.map((draw: Draw) => (
-          <li key={draw.date}>{draw.date}}</li>
+          <li key={draw.date}>
+            <DrawResult numbers={draw.numbers} />
+          </li>
         ))}
       </ul>
     </main>
