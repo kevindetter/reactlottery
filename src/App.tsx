@@ -8,7 +8,7 @@ import Results from './pages/Results';
 import Welcome from './pages/Welcome';
 
 const client = new GraphQLClient({
-  url: 'http://www.lottohelden.de/graphql'
+  url: 'https://www.lottohelden.de/graphql'
 });
 
 function App() {
