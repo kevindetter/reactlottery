@@ -7,6 +7,7 @@ import DrawResult from 'components/DrawResult';
 const EUROJACKPOT_QUERY = `query Eurojackpot($limit: Int) {
   draw(limit: $limit, type: "eurojackpot") {
     draws {
+      additionalNumbers
       date
       numbers
     }
@@ -21,6 +22,7 @@ const Results = () => {
   });
 
   type Draw = {
+    additionalNumbers: string[],
     date: string,
     numbers: string[]
   }
@@ -40,7 +42,7 @@ const Results = () => {
       <ul>
         {data.draw.draws.map((draw: Draw) => (
           <li key={draw.date}>
-            <DrawResult numbers={draw.numbers} />
+            <DrawResult additionalNumbers={draw.additionalNumbers} numbers={draw.numbers} />
           </li>
         ))}
       </ul>
