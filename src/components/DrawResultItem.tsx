@@ -6,9 +6,9 @@ type DrawResultItemProps = {
 }
 
 const DrawResultItem = ({ number, additionalNumber }: DrawResultItemProps) => {
-  return (
-    <span>{number}</span>
-  );
+  const className = 'draw-result-item' + (additionalNumber ? ' draw-result-item--additional' : '');
+
+  return <span className={className}>{number}</span>;
 }
 
 export default DrawResultItem;

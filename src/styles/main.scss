@@ -8,6 +8,8 @@ html { box-sizing: border-box; }
 
 body {
   background: $colorBackgroundBody;
+  font-family: 'Open Sans', sans-serif;
+  font-size: $base-font-size;
 }
 
 main {
@@ -16,4 +18,12 @@ main {
   padding: 0 $gutter;
   margin: 0 auto;
   background: $colorBackgroundContent;
+}
+
+h1, h2, h3, h4, h5, h6 { font-family: 'Roboto', sans-serif; }
+
+.draw-result-item {
+  background: $colorGrayLight;
+  font-family: 'Roboto', sans-serif;
+  font-weight: bold;
 }
