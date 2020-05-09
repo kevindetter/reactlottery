@@ -8,6 +8,7 @@ html { box-sizing: border-box; }
 
 body {
   background: $colorBackgroundBody;
+  color: $colorTypoDark;
   font-family: 'Open Sans', sans-serif;
   font-size: $base-font-size;
 }
@@ -15,15 +16,45 @@ body {
 main {
   width: 100%;
   max-width: $viewport-lg;
-  padding: 0 $gutter;
+  padding: $gutter * 2 $gutter;
   margin: 0 auto;
+  min-height: 100vh;
   background: $colorBackgroundContent;
+}
+
+a {
+  text-decoration: none;
+
+  &:hover { text-decoration: underline; }
 }
 
 h1, h2, h3, h4, h5, h6 { font-family: 'Roboto', sans-serif; }
 
+h1, .h1 { font-size: 2rem; }
+h2, .h2 { font-size: 1.5rem; }
+h3, .h3 { font-size: 1rem; }
+
+.page {
+  &-footer,
+  &-header {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    max-width: $viewport-lg;
+    padding: $gutter * 2 $gutter;
+    margin: 0 auto;
+
+    a + a { margin-left: $gutter; }
+  }
+
+  &-footer {
+    background: $colorBackgroundFooter;
+
+    &, a { color: $colorTypoBright; }
+  }
+}
+
 .draw-result-item {
-  background: $colorGrayLight;
   font-family: 'Roboto', sans-serif;
   font-weight: bold;
 }
