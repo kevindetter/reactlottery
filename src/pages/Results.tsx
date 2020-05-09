@@ -9,6 +9,7 @@ const EUROJACKPOT_QUERY = `query Eurojackpot($limit: Int) {
     draws {
       additionalNumbers
       date
+      jackpot
       numbers
     }
   }
@@ -26,6 +27,7 @@ const Results = () => {
   type Draw = {
     additionalNumbers: string[],
     date: string,
+    jackpot: number,
     numbers: string[]
   }
 

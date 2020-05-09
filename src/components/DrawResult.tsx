@@ -5,6 +5,7 @@ import DrawResultItem from 'components/DrawResultItem';
 type DrawResultProps = {
   additionalNumbers: string[],
   date: string,
+  jackpot: number,
   numbers: string[]
 }
 
@@ -21,7 +22,13 @@ const FormatDate = (date: string): string => {
   return formattedDate.toLocaleDateString('en-US');;
 }
 
-const DrawResult = ({ additionalNumbers, date, numbers }: DrawResultProps) => {
+const FormatJackpot = (jackpot: number): string => {
+  let formattedJackpot = (jackpot / Math.pow(10, 6)) + ' M €';
+
+  return formattedJackpot;
+}
+
+const DrawResult = ({ additionalNumbers, date, jackpot, numbers }: DrawResultProps) => {
   return (
     <article className="draw-result">
       <h2>
@@ -40,6 +47,8 @@ const DrawResult = ({ additionalNumbers, date, numbers }: DrawResultProps) => {
           <li key={number}><DrawResultItem number={number} additionalNumber /></li>
         ))}
       </ul>
+
+      <span>Jackpot: <strong>{FormatJackpot(jackpot)}</strong></span>
     </article>
   );
 }
