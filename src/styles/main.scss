@@ -67,6 +67,12 @@ h3, .h3 { font-size: 1rem; }
   }
 }
 
+.draw-results {
+  & > ul {
+    & > li + li { margin-top: $gutter; }
+  }
+}
+
 .draw-result {
   ul {
     display: flex;

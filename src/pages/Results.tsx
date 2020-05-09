@@ -37,15 +37,19 @@ const Results = () => {
 
   return (
     <>
-      <h1>Results</h1>
+      <header>
+        <h1>Results</h1>
+      </header>
 
-      <ul>
-        {data.draw.draws.map((draw: Draw) => (
-          <li key={draw.date}>
-            <DrawResult additionalNumbers={draw.additionalNumbers} numbers={draw.numbers} />
-          </li>
-        ))}
-      </ul>
+      <section className="draw-results">
+        <ul>
+          {data.draw.draws.map((draw: Draw) => (
+            <li key={draw.date}>
+              <DrawResult additionalNumbers={draw.additionalNumbers} numbers={draw.numbers} />
+            </li>
+          ))}
+        </ul>
+      </section>
     </>
   );
 }
