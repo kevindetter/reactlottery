@@ -15,6 +15,8 @@ const DrawResult = ({ additionalNumbers, numbers }: DrawResultProps) => {
           <li><DrawResultItem number={number} /></li>
         ))}
 
+        <span className="draw-result__plus">+</span>
+
         {additionalNumbers.map((number: string) => (
           <li><DrawResultItem number={number} additionalNumber /></li>
         ))}
