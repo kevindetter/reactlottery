@@ -1,6 +1,7 @@
 @import 'reset';
 @import 'colors';
 @import 'dimensions';
+@import 'media-queries';
 @import 'typo';
 
 html { box-sizing: border-box; }
@@ -51,14 +52,14 @@ h3, .h3 { font-size: 1rem; }
 strong { font-weight: bold; }
 
 .page {
-  min-height: 60vh;
+  margin: 66px auto 0;
+  min-height: 80vh;
   background: $color-background-content;
 
   &, &-footer, &-header {
     width: 100%;
     max-width: $viewport-lg;
-    padding: $gutter * 2;
-    margin: 0 auto;
+    padding: $gutter;
   }
 
   &-footer,
@@ -66,11 +67,48 @@ strong { font-weight: bold; }
     display: flex;
     align-items: center;
     justify-content: space-between;
+    margin: 0 auto;
     background: $color-background-footer;
 
     &, a { color: $color-typo-bright; }
     a.active { color: $color-accent; }
-    a + a { margin-left: $gutter; }
+  }
+
+  &-header {
+    position: fixed;
+    top: 0;
+
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      width: 100vw;
+      height: 100vh;
+      background: rgba($color-background-footer, .95);
+      opacity: 0;
+      visibility: hidden;
+      z-index: 1000;
+
+      a {
+        padding: $gutter 0;
+        font-size: 2rem;
+      }
+    }
+  }
+
+  &-footer {
+    flex-direction: column;
+
+    nav {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-top: $gutter;
+    }
   }
 
   &-logo {
@@ -78,13 +116,58 @@ strong { font-weight: bold; }
     align-items: center;
     color: $color-typo-dark;
     font-family: 'Roboto', sans-serif;
-    font-size: 2rem;
+    font-size: 1rem;
     text-transform: uppercase;
     line-height: 1;
 
     &:hover { text-decoration: none; }
 
-    img { width: 90px; }
+    img { width: 60px; }
+  }
+
+  @include media-query($small-up) {
+    min-height: 60vh;
+    margin: 0 auto;
+
+    &, &-footer, &-header { padding: $gutter * 2; }
+
+    &-footer,
+    &-header {
+      flex-direction: row;
+
+      a + a { margin-left: $gutter; }
+    }
+
+    &-footer {
+      nav {
+        flex-direction: row;
+        margin-top: 0;
+      }
+    }
+
+    &-header {
+      position: static;
+
+      nav {
+        position: static;
+        flex-direction: row;
+        width: auto;
+        height: auto;
+        opacity: 1;
+        visibility: visible;
+
+        a {
+          padding: 0;
+          font-size: 1rem;
+        }
+      }
+    }
+
+    &-logo {
+      font-size: 2rem;
+
+      img { width: 90px; }
+    }
   }
 }
 
