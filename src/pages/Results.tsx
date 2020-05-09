@@ -45,7 +45,7 @@ const Results = () => {
         <ul>
           {data.draw.draws.map((draw: Draw) => (
             <li key={draw.date}>
-              <DrawResult additionalNumbers={draw.additionalNumbers} numbers={draw.numbers} />
+              <DrawResult {...draw} />
             </li>
           ))}
         </ul>
