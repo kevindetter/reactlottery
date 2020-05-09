@@ -7,14 +7,14 @@ html { box-sizing: border-box; }
 *, *:before, *:after { box-sizing: inherit; }
 
 body {
-  background: $colorBackgroundBody;
-  color: $colorTypoDark;
+  background: $color-background-body;
+  color: $color-typo-dark;
   font-family: 'Open Sans', sans-serif;
   font-size: $base-font-size;
 }
 
 a {
-  color: $colorAccent;
+  color: $color-accent;
   text-decoration: none;
 
   &:hover { text-decoration: underline; }
@@ -28,7 +28,7 @@ h3, .h3 { font-size: 1rem; }
 
 .page {
   min-height: 60vh;
-  background: $colorBackgroundContent;
+  background: $color-background-content;
 
   &, &-footer, &-header {
     width: 100%;
@@ -42,17 +42,17 @@ h3, .h3 { font-size: 1rem; }
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background: $colorBackgroundFooter;
+    background: $color-background-footer;
 
-    &, a { color: $colorTypoBright; }
-    a.active { color: $colorAccent; }
+    &, a { color: $color-typo-bright; }
+    a.active { color: $color-accent; }
     a + a { margin-left: $gutter; }
   }
 
   &-logo {
     display: flex;
     align-items: center;
-    color: $colorTypoDark;
+    color: $color-typo-dark;
     font-family: 'Roboto', sans-serif;
     font-size: 2rem;
     text-transform: uppercase;
@@ -63,7 +63,24 @@ h3, .h3 { font-size: 1rem; }
   }
 }
 
-.draw-result-item {
-  font-family: 'Roboto', sans-serif;
-  font-weight: bold;
+.draw-result {
+  ul {
+    display: flex;
+
+    li + li { margin-left: $gutter; }
+  }
+
+  &-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 42px;
+    height: 42px;
+    border: 2px solid $color-typo-dark;
+    border-radius: 50%;
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+
+    &--additional { background-color: $color-accent; }
+  }
 }

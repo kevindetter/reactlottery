@@ -9,7 +9,7 @@ type DrawResultProps = {
 
 const DrawResult = ({ additionalNumbers, numbers }: DrawResultProps) => {
   return (
-    <article>
+    <article className="draw-result">
       <ul>
         {numbers.map((number: string) => (
           <li><DrawResultItem number={number} /></li>
