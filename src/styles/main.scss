@@ -13,16 +13,8 @@ body {
   font-size: $base-font-size;
 }
 
-main {
-  width: 100%;
-  max-width: $viewport-lg;
-  padding: $gutter * 2 $gutter;
-  margin: 0 auto;
-  min-height: 100vh;
-  background: $colorBackgroundContent;
-}
-
 a {
+  color: $colorAccent;
   text-decoration: none;
 
   &:hover { text-decoration: underline; }
@@ -35,22 +27,38 @@ h2, .h2 { font-size: 1.5rem; }
 h3, .h3 { font-size: 1rem; }
 
 .page {
+  min-height: 60vh;
+  background: $colorBackgroundContent;
+
+  &, &-footer, &-header {
+    width: 100%;
+    max-width: $viewport-lg;
+    padding: $gutter * 2;
+    margin: 0 auto;
+  }
+
   &-footer,
   &-header {
     display: flex;
+    align-items: center;
     justify-content: space-between;
-    width: 100%;
-    max-width: $viewport-lg;
-    padding: $gutter * 2 $gutter;
-    margin: 0 auto;
-
-    a + a { margin-left: $gutter; }
-  }
-
-  &-footer {
     background: $colorBackgroundFooter;
 
     &, a { color: $colorTypoBright; }
+    a + a { margin-left: $gutter; }
+  }
+
+  &-logo {
+    display: flex;
+    align-items: center;
+    color: $colorTypoDark;
+    font-family: 'Roboto', sans-serif;
+    font-size: 2rem;
+    text-transform: uppercase;
+
+    &:hover { text-decoration: none; }
+
+    img { width: 90px; }
   }
 }
 
