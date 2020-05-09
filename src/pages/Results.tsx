@@ -42,7 +42,7 @@ const Results = () => {
   return (
     <>
       <header>
-        <h1>Results</h1>
+        <h1>EuroJackpot results</h1>
       </header>
 
       <section className="draw-results">
