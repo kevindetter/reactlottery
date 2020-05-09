@@ -40,14 +40,18 @@ button {
   white-space: nowrap;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1, .h1, h2, .h2 {
   margin-bottom: .5em;
   font-family: 'Roboto', sans-serif;
 }
 
-h1, .h1 { font-size: 2rem; }
-h2, .h2 { font-size: 1.5rem; }
-h3, .h3 { font-size: 1rem; }
+h1, .h1 { font-size: 1.5rem; }
+h2, .h2 { font-size: 1.25rem; }
+
+@include media-query($small-up) {
+  h1, .h1 { font-size: 2rem; }
+  h2, .h2 { font-size: 1.5rem; }
+}
 
 strong { font-weight: bold; }
 
@@ -187,7 +191,7 @@ strong { font-weight: bold; }
     margin-bottom: $gutter;
     font-family: 'Roboto', sans-serif;
 
-    li + li { margin-left: $gutter; }
+    li + li { margin-left: $gutter / 2; }
   }
 
   &__plus { font-size: 1.5rem; }
@@ -196,11 +200,22 @@ strong { font-weight: bold; }
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 42px;
-    height: 42px;
+    width: 30px;
+    height: 30px;
     border: 2px solid $color-typo-dark;
     border-radius: 50%;
 
     &--additional { background-color: $color-accent; }
+  }
+
+  @include media-query($small-up) {
+    ul {
+      li + li { margin-left: $gutter; }
+    }
+
+    &-item {
+      width: 42px;
+      height: 42px;
+    }
   }
 }
