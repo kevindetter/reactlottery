@@ -45,6 +45,7 @@ h3, .h3 { font-size: 1rem; }
     background: $colorBackgroundFooter;
 
     &, a { color: $colorTypoBright; }
+    a.active { color: $colorAccent; }
     a + a { margin-left: $gutter; }
   }
 

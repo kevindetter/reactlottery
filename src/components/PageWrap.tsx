@@ -18,7 +18,7 @@ const PageWrap = ({ children }: PageWrapProps) => {
         </a>
 
         <nav>
-          <NavLink to="/" title="Go to start page">Home</NavLink>
+          <NavLink exact to="/" title="Go to start page">Home</NavLink>
           <NavLink to="/results" title="See EuroJackpot results">Results</NavLink>
         </nav>
       </header>
