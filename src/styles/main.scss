@@ -23,11 +23,32 @@ a {
   &:hover { text-decoration: underline; }
 }
 
-h1, h2, h3, h4, h5, h6 { font-family: 'Roboto', sans-serif; }
+button {
+  padding: .5rem;
+  border: 0;
+  border-radius: 6px;
+  outline: 0;
+  margin: 0;
+  background: $color-accent;
+  color: $color-typo-dark;
+  font-family: 'Roboto', sans-serif;
+  font-size: 1rem;
+  line-height: 1;
+  text-decoration: none;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin-bottom: .5em;
+  font-family: 'Roboto', sans-serif;
+}
 
 h1, .h1 { font-size: 2rem; }
 h2, .h2 { font-size: 1.5rem; }
 h3, .h3 { font-size: 1rem; }
+
+strong { font-weight: bold; }
 
 .page {
   min-height: 60vh;
@@ -69,7 +90,9 @@ h3, .h3 { font-size: 1rem; }
 
 .draw-results {
   & > ul {
-    & > li + li { margin-top: $gutter; }
+    margin-bottom: $gutter * 2;
+
+    & > li + li { margin-top: $gutter * 4; }
   }
 }
 
@@ -77,6 +100,8 @@ h3, .h3 { font-size: 1rem; }
   ul {
     display: flex;
     align-items: center;
+    padding: $gutter 0;
+    margin-bottom: $gutter;
     font-family: 'Roboto', sans-serif;
 
     li + li { margin-left: $gutter; }

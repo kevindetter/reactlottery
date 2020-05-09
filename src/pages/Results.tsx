@@ -53,11 +53,11 @@ const Results = () => {
             </li>
           ))}
         </ul>
-      </section>
 
-     {limit < 10 &&
-      <button onClick={() => setLimit(10)}>Show last ten drawing results</button>
-     }
+        {limit < 10 &&
+          <button onClick={() => setLimit(10)}>Show last ten drawing results</button>
+        }
+      </section>
     </>
   );
 }
