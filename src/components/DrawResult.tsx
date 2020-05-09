@@ -12,13 +12,13 @@ const DrawResult = ({ additionalNumbers, numbers }: DrawResultProps) => {
     <article className="draw-result">
       <ul>
         {numbers.map((number: string) => (
-          <li><DrawResultItem number={number} /></li>
+          <li key={number}><DrawResultItem number={number} /></li>
         ))}
 
         <span className="draw-result__plus">+</span>
 
         {additionalNumbers.map((number: string) => (
-          <li><DrawResultItem number={number} additionalNumber /></li>
+          <li key={number}><DrawResultItem number={number} additionalNumber /></li>
         ))}
       </ul>
     </article>
