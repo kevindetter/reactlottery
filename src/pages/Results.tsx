@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import { useQuery } from 'graphql-hooks';
 
@@ -15,9 +15,11 @@ const EUROJACKPOT_QUERY = `query Eurojackpot($limit: Int) {
 }`;
 
 const Results = () => {
+  const [ limit, setLimit ] = useState(1);
+
   const { loading, error, data } = useQuery(EUROJACKPOT_QUERY, {
     variables: {
-      limit: 10
+      limit: limit
     }
   });
 
@@ -50,6 +52,10 @@ const Results = () => {
           ))}
         </ul>
       </section>
+
+     {limit < 10 &&
+      <button onClick={() => setLimit(10)}>Show last ten drawing results</button>
+     }
     </>
   );
 }
