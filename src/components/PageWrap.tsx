@@ -1,7 +1,5 @@
 import React from 'react';
 
-import { NavLink } from 'react-router-dom';
-
 import PageFooter from 'components/PageFooter';
 import PageHeader from 'components/PageHeader';
 
