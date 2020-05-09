@@ -38,13 +38,19 @@ const DrawResult = ({ additionalNumbers, date, jackpot, numbers }: DrawResultPro
 
       <ul>
         {numbers.map((number: string) => (
-          <li key={number}><DrawResultItem number={number} /></li>
+          <li key={number}>
+            <DrawResultItem number={number} />
+          </li>
         ))}
 
-        <span className="draw-result__plus">+</span>
+        <li>
+          <span className="draw-result__plus">+</span>
+        </li>
 
         {additionalNumbers.map((number: string) => (
-          <li key={number}><DrawResultItem number={number} additionalNumber /></li>
+          <li key={number}>
+            <DrawResultItem number={number} additionalNumber />
+          </li>
         ))}
       </ul>
 
