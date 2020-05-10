@@ -139,6 +139,8 @@ strong { font-weight: bold; }
 
     &:hover { text-decoration: none; }
 
+    &.active { color: $color-typo-bright !important; }
+    
     img { width: 60px; }
   }
 
