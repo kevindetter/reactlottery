@@ -9,7 +9,7 @@ type PageHeaderProps = {
   setNavIsOpen: any
 }
 
-const PageHeader = ({ navIsOpen, setNavIsOpen }: PageHeaderProps) => {
+const PageHeader = ({ navIsOpen = false, setNavIsOpen }: PageHeaderProps) => {
   return (
     <header className="page-header">
       <Link to="/" title="Go to start page" className="page-logo">

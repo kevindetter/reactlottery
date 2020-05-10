@@ -3,9 +3,9 @@ import React from 'react';
 import DrawResultItem from 'components/DrawResultItem';
 
 type DrawResultProps = {
-  additionalNumbers: string[],
+  additionalNumbers?: string[],
   date: string,
-  jackpot: number,
+  jackpot?: number,
   numbers: string[]
 }
 
@@ -37,24 +37,30 @@ const DrawResult = ({ additionalNumbers, date, jackpot, numbers }: DrawResultPro
       </h2>
 
       <ul>
-        {numbers.map((number: string) => (
-          <li key={number}>
-            <DrawResultItem number={number} />
-          </li>
+        {numbers.map((number: string, index: number) => (
+          index < 6 &&
+            <li key={number}>
+              <DrawResultItem number={number} />
+            </li>
         ))}
 
-        <li>
-          <span className="draw-result__plus">+</span>
-        </li>
-
-        {additionalNumbers.map((number: string) => (
-          <li key={number}>
-            <DrawResultItem number={number} additionalNumber />
+        {additionalNumbers !== undefined && 
+          <li>
+            <span className="draw-result__plus">+</span>
           </li>
+        }
+
+        {additionalNumbers !== undefined && additionalNumbers.map((number: string, index: number) => (
+          index < 2 &&
+            <li key={number}>
+              <DrawResultItem number={number} additionalNumber />
+            </li>
         ))}
       </ul>
 
-      <span>Jackpot: <strong>{FormatJackpot(jackpot)}</strong></span>
+      {jackpot &&
+        <span>Jackpot: <strong>{FormatJackpot(jackpot)}</strong></span>
+      }
     </article>
   );
 }
