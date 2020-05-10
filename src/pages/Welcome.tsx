@@ -6,7 +6,7 @@ const Welcome = () => {
   return (
     <>
       <Helmet>
-        <title>Welcome | React Lottety</title>
+        <title>Welcome | React Lottery</title>
         <meta name="description" content="This is a simple page to present latest EuroJackpot drawing results." />
       </Helmet>
 

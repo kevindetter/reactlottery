@@ -43,7 +43,7 @@ const Results = () => {
   return (
     <>
       <Helmet>
-        <title>EuroJackpot Results | React Lottety</title>
+        <title>EuroJackpot Results | React Lottery</title>
         <meta name="description" content="Check out the latest EuroJackpot drawing results" />
       </Helmet>
 
