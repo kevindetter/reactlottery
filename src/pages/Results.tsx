@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 
 import { useQuery } from 'graphql-hooks';
+import { Helmet } from 'react-helmet';
 
 import DrawResult from 'components/DrawResult';
 
@@ -41,6 +42,11 @@ const Results = () => {
 
   return (
     <>
+      <Helmet>
+        <title>EuroJackpot Results | React Lottety</title>
+        <meta name="description" content="Check out the latest EuroJackpot drawing results" />
+      </Helmet>
+
       <header>
         <h1>EuroJackpot results</h1>
       </header>
