@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { NavLink } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 
 import logo from 'assets/logo.svg';
 
@@ -12,10 +12,10 @@ type PageHeaderProps = {
 const PageHeader = ({ navIsOpen, setNavIsOpen }: PageHeaderProps) => {
   return (
     <header className="page-header">
-      <NavLink exact to="/" title="Go to start page" className="page-logo">
+      <Link to="/" title="Go to start page" className="page-logo">
         <span>React Lottery</span>
         <img src={logo} alt="React Lottery logo" />
-      </NavLink>
+      </Link>
 
       <button
         className={'hamburger' + (navIsOpen ? ' hamburger--open' : '')}
