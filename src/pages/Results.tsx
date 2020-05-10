@@ -55,7 +55,7 @@ const Results = () => {
         </ul>
 
         {limit < 10 &&
-          <button onClick={() => setLimit(10)}>Show last ten drawing results</button>
+          <button className="btn" onClick={() => setLimit(10)}>Show last ten drawing results</button>
         }
       </section>
     </>
