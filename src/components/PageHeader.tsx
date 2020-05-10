@@ -1,18 +1,15 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 
-import { NavLink, useLocation } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 import logo from 'assets/logo.svg';
 
-const PageHeader = () => {
-  const [ isOpen, setIsOpen ] = useState(false);
-  const location = useLocation();
+type PageHeaderProps = {
+  navIsOpen: boolean,
+  setNavIsOpen: any
+}
 
-  // Close nav on route change
-  useEffect(() => {
-    setIsOpen(false);
-  }, [location]);
-
+const PageHeader = ({ navIsOpen, setNavIsOpen }: PageHeaderProps) => {
   return (
     <header className="page-header">
       <NavLink exact to="/" title="Go to start page" className="page-logo">
@@ -21,15 +18,15 @@ const PageHeader = () => {
       </NavLink>
 
       <button
-        className={'hamburger' + (isOpen ? ' hamburger--open' : '')}
-        onClick={() => setIsOpen(!isOpen)}
+        className={'hamburger' + (navIsOpen ? ' hamburger--open' : '')}
+        onClick={() => setNavIsOpen(!navIsOpen)}
       >
         <span className="hamburger-box">
           <span className="hamburger-inner"></span>
         </span>
       </button>
 
-      <nav className={isOpen ? 'open' : ''}>
+      <nav className={navIsOpen ? 'open' : ''}>
         <NavLink exact to="/" title="Go to start page">Home</NavLink>
         <NavLink to="/results" title="See EuroJackpot results">EuroJackpot</NavLink>
       </nav>
