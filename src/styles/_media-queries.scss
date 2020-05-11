@@ -1,0 +1,48 @@
+@import 'dimensions';
+
+$small:       'small';
+$small-down:  'small-down';
+$small-up:    'small-up';
+$medium:      'medium';
+$medium-down: 'medium-down';
+$medium-up:   'medium-up';
+$large:       'large';
+$large-down:  'large-down';
+$large-up:    'large-up';
+$xlarge:      'xlarge';
+$xlarge-down: 'xlarge-down';
+$xlarge-up:   'xlarge-up';
+
+$grid-breakpoints: (
+  $small        '(min-width: #{$grid-sm}) and (max-width: #{$grid-md - 1})',
+  $small-down   '(max-width: #{$grid-sm - 1})',
+  $small-up     '(min-width: #{$grid-sm})',
+  $medium       '(min-width: #{$grid-md}) and (max-width: #{$grid-lg - 1})',
+  $medium-down  '(max-width: #{$grid-md - 1})',
+  $medium-up    '(min-width: #{$grid-md})',
+  $large        '(min-width: #{$grid-lg}) and (max-width: #{$grid-xl - 1})',
+  $large-down   '(max-width: #{$grid-lg - 1})',
+  $large-up     '(min-width: #{$grid-lg})',
+  $xlarge       '(min-width: #{$grid-xl})'
+);
+
+@mixin media-query($media-query) {
+  $breakpoint-found: false;
+  
+  @each $breakpoint in $grid-breakpoints {
+    $name: nth($breakpoint, 1);
+    $declaration: nth($breakpoint, 2);
+    
+    @if $media-query == $name and $declaration {
+      $breakpoint-found: true;
+      
+      @media only screen and #{$declaration} {
+        @content;
+      }
+    }
+  }
+  
+  @if $breakpoint-found == false {
+    @warn 'Breakpoint "#{$media-query}" does not exist';
+  }
+}

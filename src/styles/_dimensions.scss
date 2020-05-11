@@ -1,0 +1,11 @@
+$gutter: 12px;
+
+$viewport-xl: 1440px; /* 1440+       */
+$viewport-lg: 1200px; /* 1200 - 1440 */
+$viewport-md: 992px;  /* 992  - 1200 */
+$viewport-sm: 768px;  /* 768  - 992  */
+
+$grid-xl: $viewport-xl;
+$grid-lg: $viewport-lg;
+$grid-md: $viewport-md;
+$grid-sm: $viewport-sm;
